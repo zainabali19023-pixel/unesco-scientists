@@ -316,6 +316,13 @@
                     </div>
                 </div>
             </div>
+
+            <div class="chart-container">
+                <h3>Top Countries</h3>
+                <div class="chart-wrapper">
+                    <canvas id="disasterCountriesChart"></canvas>
+                </div>
+            </div>
         </div>
 
         <div id="health" class="tab-content">
@@ -342,6 +349,14 @@
                     <div class="chart-wrapper small">
                         <canvas id="epidemicYearChart"></canvas>
                     </div>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <h3>Top Countries</h3>
+                <p style="color: #666; margin-bottom: 15px;">By EM-DAT epidemic event count (cholera and other bacterial/viral outbreaks) &mdash; not COVID-19, see chart below.</p>
+                <div class="chart-wrapper">
+                    <canvas id="epidemicCountriesChart"></canvas>
                 </div>
             </div>
 
@@ -540,6 +555,24 @@
                 datasets: [{label: 'Epidemics', data: [37, 7, 7, 18, 21, 14, 12, 1], backgroundColor: '#00897b', borderRadius: 5}]
             },
             options: {responsive: true, maintainAspectRatio: false, plugins: {legend: {display: false}}, scales: {y: {beginAtZero: true}}}
+        });
+
+        new Chart(document.getElementById('disasterCountriesChart').getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: ["USA", "Indonesia", "China", "Philippines", "India", "Brazil", "Vietnam", "Pakistan", "Colombia", "France", "Thailand", "Afghanistan", "Japan", "Mexico", "Peru", "Iran", "DRC", "Turkey", "South Africa", "Italy"],
+                datasets: [{label: 'Disasters', data: [207, 159, 111, 105, 98, 77, 68, 55, 54, 53, 52, 51, 48, 47, 43, 42, 38, 37, 36, 35], backgroundColor: '#fb8c00', borderRadius: 5}]
+            },
+            options: {indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: {legend: {display: false}}, scales: {x: {beginAtZero: true}}}
+        });
+
+        new Chart(document.getElementById('epidemicCountriesChart').getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: ["DRC", "Nigeria", "Sudan", "Congo (Rep.)", "Somalia", "Ethiopia", "Zambia", "Tanzania", "Zimbabwe", "Kenya", "Mozambique", "South Sudan", "Yemen", "Kyrgyzstan", "Bangladesh", "Uganda", "Tonga", "India", "Pakistan", "Nepal"],
+                datasets: [{label: 'Epidemics', data: [9, 9, 5, 5, 4, 4, 4, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 2], backgroundColor: '#00897b', borderRadius: 5}]
+            },
+            options: {indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: {legend: {display: false}}, scales: {x: {beginAtZero: true}}}
         });
 
         new Chart(document.getElementById('covidChart').getContext('2d'), {
