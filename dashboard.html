@@ -739,8 +739,8 @@
 
         function initializeMap() {
             mapInstance = L.map('map', {minZoom: 2}).setView([20, 0], 2);
-            L.tileLayer('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png', {
-                attribution: '&copy; OpenStreetMap contributors, style by Wikimedia', maxZoom: 19
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+                attribution: '&copy; OpenStreetMap contributors &copy; CARTO', maxZoom: 19, subdomains: 'abcd'
             }).addTo(mapInstance);
 
             buildCountryLayer(mapInstance, COUNTRY_COUNTS, countryCoordinates, 'Events');
@@ -783,8 +783,8 @@
 
         function initializeDisasterMap() {
             disasterMapInstance = L.map('disastermap', {minZoom: 2}).setView([20, 0], 2);
-            L.tileLayer('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png', {
-                attribution: '&copy; OpenStreetMap contributors, style by Wikimedia', maxZoom: 19
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+                attribution: '&copy; OpenStreetMap contributors &copy; CARTO', maxZoom: 19, subdomains: 'abcd'
             }).addTo(disasterMapInstance);
 
             buildCountryLayer(disasterMapInstance, NATURAL_COUNTRY_COUNTS, disasterCountryCoordinates, 'Disasters');
@@ -828,8 +828,8 @@
 
         function initializeHealthMap() {
             healthMapInstance = L.map('healthmap', {minZoom: 2}).setView([20, 0], 2);
-            L.tileLayer('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png', {
-                attribution: '&copy; OpenStreetMap contributors, style by Wikimedia', maxZoom: 19
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+                attribution: '&copy; OpenStreetMap contributors &copy; CARTO', maxZoom: 19, subdomains: 'abcd'
             }).addTo(healthMapInstance);
 
             buildCountryLayer(healthMapInstance, EPIDEMIC_COUNTRY_COUNTS, disasterCountryCoordinates, 'Epidemics', {scale: 6, minRadius: 8, maxRadius: 30});
