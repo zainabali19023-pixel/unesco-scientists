@@ -323,6 +323,13 @@
                     <canvas id="disasterCountriesChart"></canvas>
                 </div>
             </div>
+
+            <div class="highlight-box">
+                <h4>Disaster Hotspots</h4>
+                <p><strong>United States (207 events):</strong> Storm-dominated (135 events, chiefly hurricanes and severe weather) with recurring flood and wildfire activity &mdash; 4,314 deaths and over 216,000 people affected recorded across the period</p>
+                <p style="margin-top: 8px;"><strong>Indonesia (159 events):</strong> Flood-dominated (94 events) with recurring seismic activity (28 earthquakes) &mdash; over 30 million people affected cumulatively, reflecting compounding hydrometeorological and geophysical exposure</p>
+                <p style="margin-top: 8px;"><strong>China (111 events):</strong> Flooding (36 events) and storms (32 events) predominate &mdash; the highest cumulative affected-population total of any country in the dataset, at over 48 million</p>
+            </div>
         </div>
 
         <div id="health" class="tab-content">
@@ -367,24 +374,39 @@
                     <canvas id="covidChart"></canvas>
                 </div>
             </div>
+
+            <div class="highlight-box">
+                <h4>Health Hotspots</h4>
+                <p><strong>Nigeria (9 epidemic events):</strong> A near-even split between viral (5) and bacterial (4) disease outbreaks &mdash; 5,111 recorded deaths, the highest epidemic death toll of any country in the dataset</p>
+                <p style="margin-top: 8px;"><strong>Democratic Republic of Congo (9 epidemic events):</strong> Predominantly viral-disease outbreaks (7 of 9 events) &mdash; 4,585 recorded deaths, the second-highest epidemic death toll in the dataset</p>
+                <p style="margin-top: 8px;"><strong>Congo and Sudan (5 epidemic events each):</strong> Congo's outbreaks were disproportionately lethal relative to event count (3,962 deaths across 5 events); Sudan recorded a mix of bacterial, parasitic and general infectious-disease outbreaks (1,668 deaths)</p>
+            </div>
         </div>
         <div id="quality" class="tab-content">
+            <div class="chart-container">
+                <h3>Integrated Analysis</h3>
+                <div style="padding: 20px; line-height: 1.8;">
+                    <p style="margin-bottom: 15px;">Countries were ranked by event count within each of three source-level indicators &mdash; ACLED conflict-violence events, EM-DAT natural-disaster events, and WHO COVID-19 deaths per 100,000 population &mdash; and the top 15 in each ranking were compared, after normalizing country names across sources. Three countries rank among the top 15 in all three indicators: <strong>Brazil, Colombia and Mexico</strong>, treated here as the dashboard's "triple-crisis" countries. A further four countries rank among the top 15 in exactly two of the three: <strong>Afghanistan and China</strong> (conflict-violence and natural disasters), <strong>Ecuador</strong> (conflict-violence and COVID-19 mortality), and <strong>the United States</strong> (natural disasters and COVID-19 mortality).</p>
+                    <p>These groupings are descriptive rather than statistically derived; the methodological basis for the "top 15" and "compounding/triple-crisis" thresholds is discussed under Limitations, below. Full country-level rankings are available in the <code>data/</code> folder accompanying this dashboard.</p>
+                </div>
+            </div>
+
             <div class="chart-container">
                 <h3>Data Sources</h3>
                 <div style="padding: 20px; line-height: 1.8;">
                     <h4 style="color: #2e7d32; margin-bottom: 10px;">ACLED &mdash; Conflict-Violence Against Women Professionals</h4>
-                    <p style="margin-bottom: 20px;">Armed Conflict Location &amp; Event Data Project. Event-level records of political violence and demonstrations, each with a short English-language narrative description, location, date and source. This is the only one of the three sources with any per-event text &mdash; it is the sole basis for the "women professionals" framing of this dashboard (Overview, Geographic, Interactive Map tabs).</p>
+                    <p style="margin-bottom: 20px;">The Armed Conflict Location &amp; Event Data Project provides event-level records of political violence and demonstrations, each accompanied by a short English-language narrative description, location, date and source. ACLED is the only one of the three sources to include per-event text, and is accordingly the sole basis for the "women professionals" framing applied throughout this dashboard's conflict-related analyses.</p>
 
                     <h4 style="color: #2e7d32; margin-bottom: 10px;">EM-DAT &mdash; Climate &amp; Health Disasters</h4>
-                    <p style="margin-bottom: 20px;">The international disaster database (CRED, UCLouvain). 3,137 natural-disaster records, 2019&ndash;2026, 193 countries: floods, storms, earthquakes, extreme temperature, wildfires, droughts, epidemics (cholera and other outbreaks), volcanic activity and related types. Aggregate country/location-level records only &mdash; deaths, injured, affected, homeless counts. No per-event narrative text and no mention of individuals or professions.</p>
+                    <p style="margin-bottom: 20px;">EM-DAT, the international disaster database maintained by CRED (UCLouvain), supplies 3,137 natural-disaster records spanning 2019&ndash;2026 across 193 countries, covering floods, storms, earthquakes, extreme temperature events, wildfires, droughts, epidemics (cholera and other outbreaks), volcanic activity and related hazard types. Records are aggregated at the country/location level and report deaths, injuries, and numbers affected or rendered homeless. EM-DAT contains no per-event narrative text and makes no reference to individuals or professions.</p>
 
                     <h4 style="color: #2e7d32; margin-bottom: 10px;">WHO COVID-19 Global Table</h4>
-                    <p style="margin-bottom: 20px;">World Health Organization cumulative COVID-19 case and death counts by country, including per-100,000-population rates. 241 countries, single snapshot as of the report date (not a time series). No per-event data, no mention of individuals or professions.</p>
+                    <p style="margin-bottom: 20px;">The World Health Organization's cumulative COVID-19 case and death table reports counts by country, including rates per 100,000 population, for 241 countries as a single snapshot as of the report date rather than as a time series. As with EM-DAT, the table contains no per-event data and no reference to individuals or professions.</p>
 
                     <h4 style="color: #2e7d32; margin-bottom: 10px;">Final Keyword Vocabulary</h4>
-                    <p style="margin-bottom: 10px;">Every ACLED event must match at least one <strong>professional-role keyword</strong> (14 terms):</p>
+                    <p style="margin-bottom: 10px;">Each ACLED event was required to match at least one of fourteen <strong>professional-role keywords</strong>:</p>
                     <p style="margin-bottom: 15px;"><em>university, health worker, nurse, professor, faculty, university staff, academic, researcher, doctor, medical staff, scholar, laboratory, research center, scientist</em></p>
-                    <p style="margin-bottom: 10px;">Eight additional <strong>topical phrases</strong> were specified as intended framing keywords: <em>women scientist, women researcher, female scientist, female researcher, women in science, women in STEM, gender in science, gender in research</em>.</p>
+                    <p style="margin-bottom: 10px;">An additional eight <strong>topical phrases</strong> were specified as intended framing keywords: <em>women scientist, women researcher, female scientist, female researcher, women in science, women in STEM, gender in science, gender in research</em>.</p>
                 </div>
             </div>
 
@@ -394,49 +416,48 @@
                     <h4 style="color: #2e7d32; margin-bottom: 15px;">ACLED: Five-Stage Refinement</h4>
 
                     <p style="margin-bottom: 20px;"><strong>Stage 1: Broad Keyword Matching</strong><br>
-                    Initial: 24,830 events (any mention of scientist keywords + women keywords)</p>
+                    An initial pass identified 24,830 events containing any mention of a scientist-related keyword in combination with a women-related keyword.</p>
 
                     <p style="margin-bottom: 20px;"><strong>Stage 2: Refined Filtering (5,708 events)</strong><br>
-                    Removed: False positive patterns, place names, broad gender terms<br>
-                    Added: Professional role focus, crisis context requirement</p>
+                    False-positive patterns, place names and broad gender terms not indicative of a professional context were removed, and a requirement for professional-role focus and crisis context was introduced.</p>
 
                     <p style="margin-bottom: 20px;"><strong>Stage 3: Ultra-Refined Filtering (5,229 events)</strong><br>
-                    Removed additional: place-name false positives, passive-victimhood patterns, non-professional-context violence</p>
+                    Further removal of place-name false positives, passive-victimhood patterns and violence occurring outside a professional context.</p>
 
                     <p style="margin-bottom: 20px;"><strong>Stage 4: Final Role Vocabulary (3,368 events)</strong><br>
-                    Re-applied the finalized 14-keyword professional-role vocabulary (see "Final Keyword Vocabulary" above), dropping teacher, instructor, surgeon, healthcare worker, physician and hospital staff from the earlier working list, and reinstating nurse. Events with no remaining qualifying role were removed.</p>
+                    The finalized fourteen-keyword professional-role vocabulary (see "Final Keyword Vocabulary," above) was reapplied, dropping teacher, instructor, surgeon, healthcare worker, physician and hospital staff from the earlier working list and reinstating nurse. Events retaining no qualifying role were excluded.</p>
 
                     <p style="margin-bottom: 20px;"><strong>Stage 5: Conflict &amp; Violence Filter (236 events)</strong><br>
-                    Of the Stage-4 dataset, 86.9% (2,927 events) was still tagged "Protests" &mdash; demonstrations, not violence. This stage keeps only ACLED's political-violence types (Violence against civilians, Explosions/Remote violence, Battles) and removes Protests, Riots and Strategic developments &mdash; 3,132 events (93.0%) excluded.</p>
+                    Of the Stage-4 dataset, 86.9% (2,927 events) remained classified as "Protests" &mdash; demonstrations rather than violence. This final stage retains only ACLED's political-violence categories (violence against civilians, explosions/remote violence, battles) and excludes protests, riots and strategic developments, removing 3,132 events (93.0%).</p>
 
                     <h4 style="color: #2e7d32; margin-bottom: 15px; margin-top: 25px;">EM-DAT Processing</h4>
                     <ul style="margin-left: 30px; margin-bottom: 20px;">
-                        <li>Country names normalized to match ACLED's naming (8 countries remapped, e.g. "Democratic Republic of the Congo" &rarr; "Democratic Republic of Congo", "Iran (Islamic Republic of)" &rarr; "Iran")</li>
+                        <li>Country names were normalized to match ACLED's naming conventions (eight countries remapped; for example, "Democratic Republic of the Congo" &rarr; "Democratic Republic of Congo" and "Iran (Islamic Republic of)" &rarr; "Iran")</li>
                         <li>Only 229 of 3,137 records (7%) carry precise event coordinates; the remaining 91% are plotted at country centroids</li>
-                        <li>Dates constructed from separate Year/Month/Day fields; missing month or day defaulted to 01 (31 records missing month, 313 missing day)</li>
+                        <li>Dates were constructed from separate Year/Month/Day fields; missing month or day values defaulted to 01 (31 records missing month, 313 missing day)</li>
                     </ul>
 
                     <h4 style="color: #2e7d32; margin-bottom: 15px;">WHO COVID-19 Processing</h4>
                     <ul style="margin-left: 30px; margin-bottom: 20px;">
-                        <li>Country names normalized to match ACLED's naming (8 countries remapped, including "occupied Palestinian territory, including east Jerusalem" &rarr; "Palestine")</li>
-                        <li>Blank case/death cells treated as not-reported (null), not zero</li>
+                        <li>Country names were normalized to match ACLED's naming conventions (eight countries remapped, including "occupied Palestinian territory, including east Jerusalem" &rarr; "Palestine")</li>
+                        <li>Blank case/death cells were treated as not reported (null) rather than as zero</li>
                     </ul>
 
                     <h4 style="color: #2e7d32; margin-bottom: 15px;">Cross-Referencing</h4>
-                    <p>All three sources were joined on normalized country name to build the Compounding Crises table on the Overview tab. This is a geographic/temporal overlay, not a merged event dataset &mdash; ACLED, EM-DAT and WHO records are never combined into a single row implying a direct causal or individual-level link.</p>
+                    <p>All three sources were joined on normalized country name to support the Integrated Analysis presented above. This constitutes a geographic and temporal overlay rather than a merged event dataset: ACLED, EM-DAT and WHO records are never combined into a single row implying a direct causal or individual-level link.</p>
                 </div>
             </div>
 
             <div class="chart-container">
                 <h3>Limitations</h3>
                 <div style="padding: 20px; line-height: 1.8;">
-                    <p style="color: #999;"><strong>ACLED language &amp; coverage bias:</strong> reflects English-language media; some regions and languages underrepresented; keyword specificity cannot capture all contexts.<br><br>
-                    <strong>Conflict-violence filter narrows scope, doesn't invalidate the rest:</strong> the 236-event conflict-violence set deliberately excludes Protests/Riots/Strategic developments (93.0% of the Stage-4 dataset) &mdash; those events still happened, they're just not political violence.<br><br>
-                    <strong>EM-DAT and WHO have no individual-level link to women professionals:</strong> checked EM-DAT's full text fields for role/gender keywords (school, hospital, teacher, nurse, university, women, girl, etc.) &mdash; zero hits across all 3,137 records. Both sources are included as geographic/temporal context only, never as additional women-professional incidents.<br><br>
-                    <strong>WHO COVID data is a single snapshot, not a time series:</strong> cumulative totals as of the report date only &mdash; cannot show infection/mortality trends over the 2019&ndash;2025 study window the way the conflict-violence data can.<br><br>
-                    <strong>EM-DAT excludes COVID-19 itself:</strong> EM-DAT's own methodology drops COVID-19 as a special case due to its unprecedented scale, so its "Epidemic" category (117 records) covers other outbreaks (cholera, etc.) only &mdash; the WHO table is what supplies COVID-19 coverage here.<br><br>
-                    <strong>Country-name joins are best-effort:</strong> 8&ndash;10 manual remaps per source pair; disputed or differently-scoped territories (e.g. Palestine, Taiwan, Hong Kong/Macao SARs) carry extra uncertainty.<br><br>
-                    <strong>"Top 15" and "compounding/triple crisis" thresholds are chosen for interpretability,</strong> not statistically derived cutoffs &mdash; treat them as a way to surface candidates for closer reading, not a formal risk score. Current triple-crisis countries: Brazil, Colombia, Ecuador, Mexico. Compounding (two of three): Afghanistan, Bolivia, China, Democratic Republic of Congo, Ethiopia, Iran, United States.</p>
+                    <p style="color: #999;"><strong>ACLED language and coverage bias:</strong> ACLED's records reflect English-language media coverage; some regions and languages are consequently underrepresented, and keyword specificity cannot capture every relevant context.<br><br>
+                    <strong>The conflict-violence filter narrows scope but does not invalidate the remainder of the dataset:</strong> the 236-event conflict-violence set deliberately excludes protests, riots and strategic developments (93.0% of the Stage-4 dataset); these events still occurred, but do not constitute political violence.<br><br>
+                    <strong>EM-DAT and WHO carry no individual-level link to women professionals:</strong> EM-DAT's full text fields were checked for role and gender keywords (school, hospital, teacher, nurse, university, women, girl, and others), returning zero matches across all 3,137 records. Both sources are included solely as geographic and temporal context, not as additional women-professional incidents.<br><br>
+                    <strong>WHO COVID-19 data represent a single snapshot rather than a time series:</strong> cumulative totals are reported as of the report date only, and therefore cannot show infection or mortality trends over the 2019&ndash;2025 study window in the way the conflict-violence data can.<br><br>
+                    <strong>EM-DAT excludes COVID-19 as a special case:</strong> EM-DAT's own methodology omits COVID-19 owing to its unprecedented scale; its "Epidemic" category (117 records) therefore covers other outbreaks, such as cholera, only, and COVID-19 coverage is supplied by the WHO table.<br><br>
+                    <strong>Country-name joins are best-effort:</strong> each source pair required eight to ten manual remaps, and disputed or differently scoped territories (for example, Palestine, Taiwan, and the Hong Kong and Macao Special Administrative Regions) carry additional uncertainty.<br><br>
+                    <strong>The "top 15" and "compounding/triple-crisis" thresholds used in the Integrated Analysis above are chosen for interpretability rather than derived through a statistical procedure;</strong> a country's absence from either grouping does not indicate low risk, only that it fell outside the top 15 by raw event count (or, for WHO data, deaths per 100,000 population) in one or more of the three source rankings. These thresholds should be read as a heuristic for surfacing candidates for closer qualitative reading, not as a formal, statistically validated risk score.</p>
                 </div>
             </div>
         </div>
